@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int sumOfUnique(vector<int>& nums) {
+        int c=0,i;
+        map<int,int>v;
+        for(i=0;i<nums.size();i++){
+            v[nums[i]]++;
+        }
+
+        for(auto it=v.begin();it!=v.end();it++){
+            if(it->second==1){
+                c=c+it->first;
+            }
+        }
+        return c;
+    }
+};
